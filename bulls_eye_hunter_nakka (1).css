@@ -1,0 +1,184 @@
+/*
+ * BULLS EYE HUNTER — NIGHT FLIGHT
+ * Autorski motyw CSS dla publicznych stron n01 League / Nakka.
+ * Wersja: 1.0 (03.11.2026)
+ *
+ * Kolory: grafit / czerwień / lodowy turkus.
+ * Bez zewnętrznych bibliotek, fontów, skryptów i obrazów.
+ *
+ * UŻYCIE: opublikuj ten plik pod publicznym adresem HTTPS,
+ * wybierz motyw 'Custom' w ustawieniach wydarzenia i wklej URL.
+ * Nakka może zmieniać strukturę HTML; wówczas niektóre selektory
+ * będą wymagały dopasowania. CSS nie zmienia wyników ani terminarza.
+ */
+
+:root {
+  color-scheme: dark;
+  --beh-night: #080d15;
+  --beh-dark: #101923;
+  --beh-panel: #14212f;
+  --beh-panel2: #1b2b3a;
+  --beh-line: #304557;
+  --beh-red: #ff4b5e;
+  --beh-red-dark: #aa2037;
+  --beh-ice: #6be8e0;
+  --beh-cream: #f3f7fa;
+  --beh-mute: #b3c3cf;
+}
+
+/* STRONA — lekki darterski blask, bez obrazów i wolno ładujących fontów. */
+html, body {
+  min-height: 100%;
+  background: radial-gradient(ellipse 78% 56% at 85% 0%, rgba(205,37,63,.20), transparent 65%),
+              radial-gradient(ellipse 65% 70% at 0% 75%, rgba(57,188,190,.10), transparent 70%),
+              linear-gradient(135deg, #080d15 0%, #101824 52%, #0a1019 100%) fixed !important;
+  color: var(--beh-cream) !important;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
+}
+body { line-height: 1.45; }
+body::selection { background: #b92c44; color: white; }
+
+/* GŁÓWNE NAGŁÓWKI. */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  letter-spacing: .015em;
+}
+h1, h2 { text-shadow: 0 2px 20px rgba(255,75,94,.15); }
+h1::after, h2::after {
+  content: "";
+  display: block;
+  margin-top: 9px;
+  width: min(92px, 22%);
+  height: 3px;
+  background: linear-gradient(90deg, var(--beh-red), var(--beh-ice));
+  border-radius: 2px;
+}
+
+/* NAGŁÓWEK NA GÓRZE I NAWIGACJA. */
+header, body > nav, .navbar, .navbar-default, .navbar-inverse,
+.page-header, #header, .header, .topbar, .top-bar {
+  background: linear-gradient(90deg, #131a27 0%, #191d2b 60%, #271a28 100%) !important;
+  color: #fff !important;
+  border-color: var(--beh-red-dark) !important;
+  box-shadow: 0 3px 22px rgba(0,0,0,.30);
+}
+
+/* LINKI, KARTY, TEKST POMOCNICZY. */
+a, a:visited { color: var(--beh-ice) !important; }
+a:hover, a:focus { color: #ffffff !important; text-decoration-color: var(--beh-red) !important; }
+small, .small, .text-muted, .muted, .subtext { color: var(--beh-mute) !important; }
+hr { border-color: var(--beh-line) !important; }
+.card, .panel, .well, .modal-content, .dropdown-menu,
+.list-group-item, .card-body, .tab-content, .popover {
+  color: var(--beh-cream) !important;
+  background: linear-gradient(160deg, var(--beh-panel), var(--beh-dark)) !important;
+  border-color: var(--beh-line) !important;
+}
+
+/* TABELA LIGOWA — najważniejsza część motywu. */
+table {
+  color: var(--beh-cream) !important;
+  background: rgba(15,24,35,.95) !important;
+  border: 1px solid #33485a !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  box-shadow: 0 12px 34px rgba(0,0,0,.28);
+}
+table th, table td {
+  color: var(--beh-cream) !important;
+  border-color: #324656 !important;
+  vertical-align: middle !important;
+}
+table thead th, table thead td,
+table tr:first-child > th {
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #a6223b 0%, #6e192f 100%) !important;
+  font-size: .94em;
+  font-weight: 750;
+  letter-spacing: .018em;
+  border-color: #bd4054 !important;
+}
+table tbody tr, table tr:not(:first-child) {
+  background: #162230 !important;
+  transition: background-color .18s ease;
+}
+table tbody tr:nth-child(even), table tr:nth-child(2n+1):not(:first-child) {
+  background: #1d2c3a !important;
+}
+table tbody tr:hover, table tr:not(:first-child):hover {
+  background: #304052 !important;
+}
+table tbody td:first-child, table tr td:first-child {
+  font-weight: 600;
+  color: #ffffff !important;
+}
+table tbody td:last-child, table tr td:last-child { color: var(--beh-ice) !important; }
+.table-striped > tbody > tr:nth-of-type(odd) > * { background-color: #1c2a39 !important; color: white !important; }
+.table-striped > tbody > tr:nth-of-type(even) > * { background-color: #14202e !important; color: white !important; }
+.table-hover > tbody > tr:hover > * { background-color: #304052 !important; }
+
+/* PRZYCISKI — czerwony akcent, płynne najechanie. */
+button, .btn, input[type="button"], input[type="submit"],
+input[type="reset"], [role="button"] {
+  background: linear-gradient(145deg, #b52d46, #8c2139) !important;
+  color: #fff !important;
+  border: 1px solid #df5065 !important;
+  border-radius: 7px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  text-shadow: none !important;
+  transition: filter .15s ease, transform .15s ease;
+}
+button:hover, .btn:hover, input[type="button"]:hover,
+input[type="submit"]:hover, [role="button"]:hover {
+  filter: brightness(1.2);
+}
+button:disabled, .btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* ZAKŁADKI, WYBÓR WYNIKÓW I FORMULARZE. */
+.nav-tabs, .nav-pills { border-color: var(--beh-line) !important; }
+.nav-tabs .active, .nav-tabs .active a,
+.nav-pills .active, .nav-pills .active a,
+[aria-selected="true"] {
+  background: #823046 !important;
+  color: #fff !important;
+  border-color: var(--beh-red) !important;
+}
+input:not([type="checkbox"]):not([type="radio"]), select, textarea, .form-control {
+  background: #142333 !important;
+  color: var(--beh-cream) !important;
+  border: 1px solid #3a5163 !important;
+  border-radius: 5px;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--beh-ice) !important;
+  outline-offset: 1px;
+}
+input::placeholder, textarea::placeholder { color: #9fb0bf !important; }
+
+/* WSKAŹNIKI, OZNACZENIA, WYŚWIETLANE WYNIKI. */
+.badge, .label, .tag {
+  background-color: #9d2b43 !important;
+  color: #fff !important;
+  border-color: #c13d54 !important;
+}
+.progress { background: #243748 !important; }
+.progress-bar { background: linear-gradient(90deg, var(--beh-red), var(--beh-ice)) !important; }
+
+/* Niewymuszone kolory dla standardowych komunikatów. */
+.alert, .notification { color: #f6f8fb !important; border-color: #486075 !important; }
+.alert-warning { background: #54401a !important; color: #fff5d6 !important; }
+.alert-danger { background: #59212c !important; color: #ffe6eb !important; }
+.alert-success { background: #16483d !important; color: #e0fff8 !important; }
+
+/* SMARTFONY — tabela pozostaje przewijalna, nie ukrywamy kolumn. */
+@media (max-width: 720px) {
+  body { font-size: 14px; }
+  table { font-size: 12px !important; }
+  table th, table td { padding: 5px 7px !important; }
+  h1, h2 { letter-spacing: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
